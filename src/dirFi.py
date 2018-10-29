@@ -2,8 +2,8 @@
 
 import os
 
-file0=r'/Users/tianyu/IoTDB_src/iotdb'
-fileOut=r'/Users/tianyu/ioTDBfile.txt'
+file0=r'/Users/tianyu/iotdb-benchmark'
+fileOut=r'/Users/tianyu/ioTDB_benchmark.txt'
 #读取文件的行数
 def count_fileR(file):
     with open(file,'r',encoding='utf-8') as f:
@@ -17,10 +17,10 @@ def eachFile(filepath):
 
         try:
             with open(fileOut,'a',encoding='utf-8') as fout:
-                if('.java' in child):
-                    print(child[24:],count_fileR(child))
+                if('.java' in child ) and('test' in child):
+                    print(child[14:],count_fileR(child))
 
-                    fout.write(child[24:]+','+str(count_fileR(child))+'\n')
+                    fout.write('|'+child[14:]+'|'+str(count_fileR(child))+'|'+'|'+'|'+'|'+'\n')
         except:
             pass
         try:
